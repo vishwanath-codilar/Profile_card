@@ -1,6 +1,5 @@
 @charset 'UTF-8';
 
-//import mixin "grid template is defined "
 @import "grid";
 
 body {
@@ -11,7 +10,7 @@ body {
 .row {
   
   @include grid(3, 1); 
-  margin-top: 40px;
+  margin-top: 80px;
   margin-bottom: 40px;
   .col{
 
@@ -20,6 +19,7 @@ body {
     border-radius: 5px;
    box-shadow: 5px 10px 9px rgba(218, 137, 17, 0.89);
     padding: 5px;
+    
   }
   .col div{
     margin-top: 20px;
@@ -30,8 +30,7 @@ body {
     
   }
   .mailid{
-    align-items: auto;
-    justify-content: center;
+   
     opacity: 0;
   }
   .col:hover .mailid{
@@ -52,10 +51,14 @@ body {
 @media (min-width:768px)and (max-width: 1024px){
   .row {
     @include grid(2, 1);
+    margin-top: 80px;
+    margin-bottom: 40px;
   }
 }
 @media screen and (max-width:600px) {
   .row {
     @include grid(1, 1);
+    margin-top: 80px;
+    margin-bottom: 40px;
   }
 }
