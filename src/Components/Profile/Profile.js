@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../scss/app.scss";
-// import '../contentloader/loader'
+
 import Loader from '../contentloader/loader';
 
 export default function Profile({ state }) {
