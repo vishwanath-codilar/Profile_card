@@ -3,8 +3,8 @@
     grid-auto-flow: dense;
     grid-template-columns: repeat($columns, 1fr);
     grid-template-rows: repeat($rows, 1fr);
-    grid-gap: 80px;
+    grid-gap: 100px;
     margin: auto;
-    width: 80%;
+   
     text-align: center;
 }
