@@ -5,6 +5,8 @@ import Loader from '../contentloader/loader';
 
 export default function Profile({ state }) {
   console.log(state);
+  const [search,setSearchTearm]= useState("");
+  console.log(search);
   const [user, setUser] = useState(null);
   var x = state;
 
@@ -24,9 +26,17 @@ export default function Profile({ state }) {
   // getUsers();
   return (
     <>
+      <div className="search"><input type="text" placeholder="Search...." onChange={(event)=>{setSearchTearm(event.target.value);}} /> </div>
       <div className="row">
-        {user &&
-          user.map((el) => {
+       
+      {user === null ? [1,2,3,4,5,6].map((n)=> <Loader key={n}/>  ) : user.filter((el)=>{
+        if(search === ""){
+          return el;
+        }else if(el.first_name.toLowerCase().startsWith(search.toLocaleLowerCase())){
+          console.log(search)
+          return el;
+        }
+      }).map((el) => {
             return (
 
               <div className=" col " key={el.id}>
@@ -40,7 +50,7 @@ export default function Profile({ state }) {
             )
           })
         }
-        {!user && [1,2,3,4,5,6].map((n)=> <Loader key={n}/>  )}
+       
       </div>
       
     </>
